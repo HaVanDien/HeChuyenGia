@@ -129,188 +129,172 @@
             </header>
             <!-- HEADER DESKTOP-->
 			
-	<div class="main-content">
+ <!-- MAIN CONTENT-->
+            <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="overview-wrap">
-                                    <h2 class="title-1">overview</h2>
-                                    <button class="au-btn au-btn-icon au-btn--blue">
-                                        <i class="zmdi zmdi-plus"></i>add item</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row m-t-25">
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c1">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-account-o"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h2>10368</h2>
-                                                <span>members online</span>
-                                            </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart1"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c2">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>items solid</span>
-                                            </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart2"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c3">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-calendar-note"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h2>1,086</h2>
-                                                <span>this week</span>
-                                            </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart3"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c4">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-money"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h2>$1,060,386</h2>
-                                                <span>total earnings</span>
-                                            </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart4"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-lg-6">
-                                <div class="au-card recent-report">
-                                    <div class="au-card-inner">
-                                        <h3 class="title-2">recent reports</h3>
-                                        <div class="chart-info">
-                                            <div class="chart-info__left">
-                                                <div class="chart-note">
-                                                    <span class="dot dot--blue"></span>
-                                                    <span>products</span>
-                                                </div>
-                                                <div class="chart-note mr-0">
-                                                    <span class="dot dot--green"></span>
-                                                    <span>services</span>
+								 <div class="card">
+                                    <div class="card-header">
+                                        <strong>Company</strong>
+                                        <small> Form</small>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <div class="form-group">
+                                            <label for="company" class=" form-control-label">Company</label>
+                                            <input type="text" id="company" placeholder="Enter your company name" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vat" class=" form-control-label">Code Company</label>
+                                            <input type="text" id="codecompany" placeholder="DE1234567890" class="form-control">
+                                        </div>
+                                      <div class="row form-group">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="city" class=" form-control-label">City</label>
+                                                   
+                                                    <select name="select" id="select" class="form-control">
+                                                        <option value="0">Please select</option>
+                                                        <option value="1">Option #1</option>
+                                                        <option value="2">Option #2</option>
+                                                        <option value="3">Option #3</option>
+                                                    </select>
+                                                
                                                 </div>
                                             </div>
-                                            <div class="chart-info__right">
-                                                <div class="chart-statis">
-                                                    <span class="index incre">
-                                                        <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
-                                                    <span class="label">products</span>
-                                                </div>
-                                                <div class="chart-statis mr-0">
-                                                    <span class="index decre">
-                                                        <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
-                                                    <span class="label">services</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="recent-report__chart">
-                                            <canvas id="recent-rep-chart"></canvas>
-                                        </div>
+                                      </div>
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="au-card chart-percent-card">
-                                    <div class="au-card-inner">
-                                        <h3 class="title-2 tm-b-5">char by %</h3>
-                                        <div class="row no-gutters">
-                                            <div class="col-xl-6">
-                                                <div class="chart-note-wrap">
-                                                    <div class="chart-note mr-0 d-block">
-                                                        <span class="dot dot--blue"></span>
-                                                        <span>products</span>
-                                                    </div>
-                                                    <div class="chart-note mr-0 d-block">
-                                                        <span class="dot dot--red"></span>
-                                                        <span>services</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6">
-                                                <div class="percent-chart">
-                                                    <canvas id="percent-chart"></canvas>
-                                                </div>
-                                            </div>
+                                                              <div class="card">
+                                    <div class="card-header">JOB</div>
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center title-2">JOB Information</h3>
                                         </div>
+                                        <hr>
+                                        <form action="" method="post" novalidate="novalidate">
+										<div class="form-group">
+                                            <label for="vat" class=" form-control-label">Code Company</label>
+                                            <input type="text" id="codecompany" placeholder="DE1234567890" class="form-control">
+                                        </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">JOB ID</label>
+                                                <input id="jobid" name="jobid" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
+                                                    data-val-required="Please enter the job id" data-val-cc-number="Please enter a job id"
+                                                    autocomplete="cc-number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+										        <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">JOB Name</label>
+                                                <input id="jobname" name="jobname" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"
+                                                    autocomplete="jobname" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
+                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true">
+												</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="salary" class="control-label mb-1">Salary</label>
+                                                <input id="salary" name="salary" type="text" class="form-control" aria-required="true" aria-invalid="false" value="100.00">
+                                            </div>
+											 <div class="row form-group">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="education" class=" form-control-label">Education</label>
+                                                   
+                                                    <select name="education" id="education" class="form-control">
+                                                        <option value="Phổ Thông">Phổ Thông</option>
+                                                        <option value="Đại Học">Đại Học</option>
+                                                        <option value="Cao Đẳng">Cao Đẳng</option>
+                                                        <option value="Trung Cấp">Trung Cấp</option>
+														
+                                                    </select>
+                                                
+                                                </div>
+                                            </div>
+                                      </div>
+									   <div class="row form-group">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="expectedposition" class=" form-control-label">Expected Position</label>
+                                                   
+                                                    <select name="expectedposition" id="expectedposition" class="form-control">
+                                                        <option value="Nhân Viên">Nhân Viên</option>
+                                                        <option value="Giám Đốc">Giám Đốc</option>
+                                                        <option value="Trưởng Phòng">Trưởng Phòng</option>
+                                                        <option value="Phó Phòng">Phó Phòng</option>
+														
+                                                    </select>
+                                                
+                                                </div>
+                                            </div>
+                                      </div>
+									   <div class="row form-group">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="experience" class=" form-control-label">Experience</label>
+                                                   
+                                                    <select name="experience" id="experience" class="form-control">
+                                                        
+                                                        <option value="0">Không</option>
+                                                        <option value="1">1 Năm</option>
+                                                        <option value="2">2 Năm</option>
+														<option value="3">3 Năm</option>
+														<option value="4">Trên 3 Năm</option>
+													
+                                                    </select>
+                                                
+                                                </div>
+                                            </div>
+                                      </div>
+
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+ <label for="sex" class="control-label mb-1">Sex</label>
+                                                    <div class="input-group">
+                                                        <input id="sex" name="sex" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the sex"
+                                                            data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                   
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">Submit</span>
+                                                    <span id="payment-button-sending" style="display:none;">Sending�</span>
+                                                </button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
+						
                             </div>
+                     
+                       
                         </div>
-                      <div class="row">
-                            <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">University</h2>
-                                <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                            <tr>
-                                                <th>University Name</th>
-                                                <th>University ID</th>
-                                                <th>Academy</th>
-                                                <th class="text-right">Academy ID</th>
-                                                <th class="text-right">Socre</th>
-                                                <th class="text-right">City</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                         
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                      </div>
-                        <div class="row"></div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © Admin.</p>
+                                    <p>Copyright � Admin</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END MAIN CONTENT-->
+ 
             <!-- END PAGE CONTAINER-->	
     </div>
 </div>
