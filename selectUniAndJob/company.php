@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -141,37 +142,36 @@
                                         <small> Form</small>
                                     </div>
                                     <div class="card-body card-block">
+									<form action="" method="post">
                                         <div class="form-group">
                                             <label for="company" class=" form-control-label">Company</label>
-                                            <input type="text" id="company" placeholder="Enter your company name" class="form-control">
+                                            <input type="text" id="company" name="company" placeholder="Enter your company name" class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="vat" class=" form-control-label">Code Company</label>
-                                            <input type="text" id="codecompany" placeholder="DE1234567890" class="form-control">
-                                        </div>
+                                        
                                       <div class="row form-group">
                                             <div class="col-8">
                                                 <div class="form-group">
                                                     <label for="city" class=" form-control-label">City</label>
                                                    
-                                                    <select name="select" id="select" class="form-control">
+                                                      <select name="city" id="city" class="form-control">
                                                         <option value="0">Please select</option>
-                                                        <option value="1">Option #1</option>
-                                                        <option value="2">Option #2</option>
-                                                        <option value="3">Option #3</option>
+                                                        <option value="1">Hà Nội</option>
+                                                        <option value="2">Hồ Chí Minh</option>
+                                                        <option value="3">Đà Nẵng</option>
                                                     </select>
                                                 
                                                 </div>
                                             </div>
                                       </div>
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Submit
-                                        </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Reset
-                                        </button>
-                                    </div>
-                                </div>
+                                       <label>
+										<input type="submit" name="addcompany" id="addcompany" value="Submit" class="btn btn-primary btn-sm"/>
+										
+                                     <input type="reset" name="reset" value="Reset" class="btn btn-danger btn-sm"/>
+</label>
+                                
+								</form>
+								</div>
+								</div>
                             </div>
                             <div class="col-lg-6">
                                                               <div class="card">
@@ -182,17 +182,30 @@
                                         </div>
                                         <hr>
                                         <form action="" method="post" novalidate="novalidate">
+										               <?PHP
+		   $ketnoi=mysqli_connect("localhost","root","123456","test") or die ("Not connect");
+		    mysqli_set_charset($ketnoi,'utf8');
+		   ?>
 										<div class="form-group">
-                                            <label for="vat" class=" form-control-label">Code Company</label>
-                                            <input type="text" id="codecompany" placeholder="DE1234567890" class="form-control">
+                                            <label for="vat" class=" form-control-label">Company</label>
+                                              <select name="Company" class="form-control" id="Company">
+                        <option value="">== Chọn Công Ty ==</option>
+						 <?php 
+						  $selectcm="select id,companyname from company";
+							$chaycm= mysqli_query($ketnoi,$selectcm);
+  					
+    					  while($row_namecm = mysqli_fetch_array($chaycm))
+     						 {
+   								?>
+   								<option value="<?php echo $row_namecm['id'];?>" >
+								<?php echo $row_namecm['companyname'];?>
+                                </option>
+  								 <?php   
+    							  }
+  								 ?>
+                      
+                    </select>
                                         </div>
-                                            <div class="form-group">
-                                                <label for="cc-number" class="control-label mb-1">JOB ID</label>
-                                                <input id="jobid" name="jobid" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
-                                                    data-val-required="Please enter the job id" data-val-cc-number="Please enter a job id"
-                                                    autocomplete="cc-number">
-                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                            </div>
 										        <div class="form-group has-success">
                                                 <label for="cc-name" class="control-label mb-1">JOB Name</label>
                                                 <input id="jobname" name="jobname" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"
@@ -220,6 +233,9 @@
                                                 </div>
                                             </div>
                                       </div>
+		
+									  
+									  
 									   <div class="row form-group">
                                             <div class="col-8">
                                                 <div class="form-group">
@@ -254,27 +270,34 @@
                                                 </div>
                                             </div>
                                       </div>
-
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
- <label for="sex" class="control-label mb-1">Sex</label>
-                                                    <div class="input-group">
-                                                        <input id="sex" name="sex" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the sex"
-                                                            data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                   
-                                                    </div>
+									  <div class="row form-group">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="experience" class=" form-control-label">Academy</label>
+                    <select name="nganh" class="form-control" id="nganh">
+                        <option value="">== Chọn chuyên ngành ==</option>
+						 <?php 
+						  $select="select id,nameAcademy from academy";
+							$chay= mysqli_query($ketnoi,$select);
+  					
+    					  while($row_name = mysqli_fetch_array($chay))
+     						 {
+   								?>
+   								<option value="<?php echo $row_name['id'];?>" >
+								<?php echo $row_name['nameAcademy'];?>
+                                </option>
+  								 <?php   
+    							  }
+  								 ?>
+                      
+                    </select>
+                                                
                                                 </div>
                                             </div>
+                                      </div>
+
                                             <div>
-                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
-                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                                    <span id="payment-button-amount">Submit</span>
-                                                    <span id="payment-button-sending" style="display:none;">Sending�</span>
-                                                </button>
+                                            <input type="submit" name="jobadd" id="jobadd" value="Submit" class="btn btn-lg btn-info btn-block"/>
                                             </div>
                                         </form>
                                     </div>
@@ -321,6 +344,36 @@
 
     <!-- Main JS-->
     <script src="template/admin/js/main.js"></script>
+<?php
+require_once('connect.php');
+if(isset($_POST['addcompany']))
+{
+$companyname=@$_POST['company'];
+$companyid=@$_POST['codecompany'];
+$ktcompanyid="select company from company where companyid='$companyid' ";
+$chaykt1=mysqli_query($connect,$ktcompanyid);
+$num1=mysqli_num_rows($chaykt1);
+if($num1>0)
+echo "<script>alert('Code Company Đã Tồn Tại! Vui Lòng Nhập Lại ')</script>";
+else
+{
+$city=@$_POST['city'];
+$insertcom="insert into company(companyid,companyname,codecity) values(N'$companyid',N'$companyname','$city')";
+$chay=mysqli_query($connect,$insertcom);
+if($chay)
+{
+echo "<script>alert('SUCCESS')</script>";
+}
+else
+echo "<script>alert ('Fail')</script>";;
+}
+}
+if(isset($_POST['jobadd']))
+{
+}
+
+
+?>
 
 </body>
 </html>

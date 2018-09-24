@@ -283,17 +283,113 @@
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
-                                            <tr>
+										  <tr> 
+										  		<th >STT</th>
                                                 <th>University Name</th>
-                                                <th>University ID</th>
-                                                <th>Academy</th>
-                                                <th class="text-right">Academy ID</th>
+												<th class="text-right">City</th>
+                                                <th >Academy</th>
                                                 <th class="text-right">Socre</th>
-                                                <th class="text-right">City</th>
+                                                
                                             </tr>
+										
                                         </thead>
                                         <tbody>
-                                         
+                                         <?php
+										
+										$ketnoi=mysqli_connect("localhost","root","123456","test") or die ("Not connect");
+		   						        mysqli_set_charset($ketnoi,'utf8');
+										$num=0;
+										$select1="select * from truong_khoa ";
+										$chay1=mysqli_query($ketnoi,$select1);
+										while($row1=mysqli_fetch_array($chay1))
+										{
+										$a=$row1['id_truong'];
+										$b=$row1['id_khoa'];
+										$num++;
+										?>
+											<tr>
+											<?php
+										$select2="select * from university where id=$a";
+										$chay2=mysqli_query($ketnoi,$select2);
+										while($row2=mysqli_fetch_array($chay2))
+										{
+										$c=$row2['codecity'] 
+										?> <td ><?php echo $num ?></td>
+											<td><?php echo $row2['nameUnversity'] ?></td>
+											<td width="50px"><?php 
+										$select4="select * from city where id=$c";
+										$chay4=mysqli_query($ketnoi,$select4);
+										while($row4=mysqli_fetch_array($chay4))
+										{
+											echo $row4['namecity']; }?></td>
+										<?php } ?>
+										<?php
+										$select3="select * from academy where id=$b";
+										$chay3=mysqli_query($ketnoi,$select3);
+										while($row3=mysqli_fetch_array($chay3))
+										{
+										?>
+											 <td ><?php echo $row3['nameAcademy'] ?></td>
+										<?php }?>
+											 <td align="left"><?php echo $row1['diem'] ?></td>
+											 
+											</tr>
+											<?php  }?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                      </div>
+					  <div class="row">
+                            <div class="col-lg-12">
+                                <h2 class="title-1 m-b-25">Company</h2>
+                                <div class="table-responsive table--no-card m-b-40">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+										  <tr> 
+										  		<th >STT</th>
+                                                <th>Company Name</th>
+												<th class="text-right">City</th>
+                                                <th >Job</th>
+                                                <th class="text-right">Salary</th>
+                                                
+                                            </tr>
+										
+                                        </thead>
+                                        <tbody>
+                                         <?php
+										
+										$ketnoi=mysqli_connect("localhost","root","123456","test") or die ("Not connect");
+		   						        mysqli_set_charset($ketnoi,'utf8');
+										$select1="select * from congviec ";
+										$chay1=mysqli_query($ketnoi,$select1);
+										while($row1=mysqli_fetch_array($chay1))
+										{
+										$a=$row1['id_company'];
+										$num++;
+										?>
+											<tr>
+											<?php
+										$select2="select * from company where id=$a";
+										$chay2=mysqli_query($ketnoi,$select2);
+										while($row2=mysqli_fetch_array($chay2))
+										{
+										$c=$row2['codecity'] 
+										?> <td ><?php echo $num ?></td>
+											<td><?php echo $row2['companyname'] ?></td>
+											<td width="50px"><?php 
+										$select4="select * from city where id=$c";
+										$chay4=mysqli_query($ketnoi,$select4);
+										while($row4=mysqli_fetch_array($chay4))
+										{
+											echo $row4['namecity']; }?></td>
+										<?php } ?>
+				
+											 <td align="left"><?php echo $row1['name'] ?></td>
+											  <td align="left"><?php echo $row1['salary'] ?></td>
+											 
+											</tr>
+											<?php  }?>
                                         </tbody>
                                     </table>
                                 </div>

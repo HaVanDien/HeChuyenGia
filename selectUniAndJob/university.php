@@ -141,14 +141,12 @@
                                         <small> Form</small>
                                     </div>
                                     <div class="card-body card-block">
+									<form action="" method="post" >
                                         <div class="form-group">
                                             <label for="company" class=" form-control-label">University</label>
-                                            <input type="text" id="university" placeholder="Enter your company name" class="form-control">
+                                            <input type="text" id="university" name="university" placeholder="Enter your University name" class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="vat" class=" form-control-label">Code University</label>
-                                            <input type="text" id="codeuniversity" placeholder="DE1234567890" class="form-control">
-                                        </div>
+                               
                                       <div class="row form-group">
                                             <div class="col-8">
                                                 <div class="form-group">
@@ -156,66 +154,43 @@
                                                    
                                                     <select name="city" id="city" class="form-control">
                                                         <option value="0">Please select</option>
-                                                        <option value="1">Option #1</option>
-                                                        <option value="2">Option #2</option>
-                                                        <option value="3">Option #3</option>
+                                                        <option value="1">Hà Nội</option>
+                                                        <option value="2">Hồ Chí Minh</option>
+                                                        <option value="3">Đà Nẵng</option>
                                                     </select>
                                                 
                                                 </div>
                                             </div>
                                       </div>
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Submit
-                                        </button>
-                                        <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Reset
-                                        </button>
-                                    </div>
-                                </div>
+										<label>
+										<input type="submit" name="adduniversity" id="adduniversity" value="Submit" class="btn btn-primary btn-sm"/>
+										
+                                     <input type="reset" name="reset" value="Reset" class="btn btn-danger btn-sm"/>
+</label>
+									</form>
+                      
+								</div>
+								</div>
                             </div>
-                            <div class="col-lg-6">
-                                                              <div class="card">
-                                    <div class="card-header">Khoa Viện</div>
-                                    <div class="card-body">
-                                        <div class="card-title">
-                                            <h3 class="text-center title-2">Information</h3>
-                                        </div>
-                                        <hr>
-                                        <form action="" method="post" novalidate="novalidate">
-										<div class="form-group">
-                                            <label for="vat" class=" form-control-label">Code University</label>
-                                            <input type="text" id="codeuniversity" placeholder="DE1234567890" class="form-control">
-                                        </div>
-                                            <div class="form-group">
-                                                <label for="cc-number" class="control-label mb-1">Mã Khoa</label>
-                                                <input id="academyid" name="academyid" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
-                                                    data-val-required="Please enter the academy id" data-val-cc-number="Please enter a academy id"
-                                                    autocomplete="cc-number">
-                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                            </div>
-										        <div class="form-group has-success">
-                                                <label for="cc-name" class="control-label mb-1">Tên Khoa</label>
-                                                <input id="academyname" name="academyname" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"
-                                                    autocomplete="academyname" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
-                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true">
-												</span>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="salary" class="control-label mb-1">Cocre</label>
-                                                <input id="socre" name="socre" type="text" class="form-control" aria-required="true" aria-invalid="false" value="100.00">
-                                            </div>
-											 
-                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
-                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                                    <span id="payment-button-amount">Submit</span>
-                                                    <span id="payment-button-sending" style="display:none;">Sending�</span>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                          <div class="col-lg-6">
+                            <div class="card">
+                              <div class="card-header">Khoa Viện</div>
+                              <div class="card-body">
+                              <div class="card-title">
+                                <h3 class="text-center title-2">Information</h3>
+                              </div>
+                              <hr />
+                              <form action="" method="post" novalidate="novalidate">
+                                <div class="form-group has-success">
+                                  <label for="cc-name" class="control-label mb-1">Tên Khoa</label>
+                                  <input id="academyname" name="academyname" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="academyname" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" />
+                                  <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"> </span> </div>
+								<input type="submit" name="academyadd" id="academyadd" value="Submit" class="btn btn-lg btn-info btn-block"/>
+                              </form>
+                            </div>
+                          </div>
 						
-                            </div>
+                      </div>
                      
                        
                         </div>
@@ -256,6 +231,50 @@
 
     <!-- Main JS-->
     <script src="template/admin/js/main.js"></script>
+<?php
+require_once('connect.php');
+if(isset($_POST['adduniversity']))
+{
+$universityname=@$_POST['university'];
+$KTuniversityname="select nameunversity from university where nameunversity='$universityname' ";
+$chaykt1=mysqli_query($connect,$KTuniversityname);
+$num=mysqli_num_rows($chaykt1);
+if($num>0)
+echo "<script>alert(' University Đã Tồn Tại! Vui Lòng Nhập Lại ')</script>";
+else
+{
 
+$city=@$_POST['city'];
+$insertuni="insert into university(nameUnversity,codecity) values(N'$universityname','$city')";
+$chay=mysqli_query($connect,$insertuni);
+if($chay)
+{
+echo "<script>alert('SUCCESS')</script>";
+}
+else
+echo "<script>alert ('Fail')</script>";;
+}
+}
+if(isset($_POST['academyadd']))
+{
+$academyname=@$_POST['academyname'];
+$ktacademyid="select nameAcademy from academy where nameAcademy=%'$academyname'% ";
+$chaykt2=mysqli_query($connect,$ktacademyid);
+$num2=mysqli_num_rows($chaykt2);
+if($num2>0)
+echo "<script>alert('Mã Khoa Đã Tồn Tại! Vui Lòng Nhập Lại ')</script>";
+else
+{
+$insertacademy="insert into academy(nameAcademy) values(N'$academyname')";
+$chay2=mysqli_query($connect,$insertacademy);
+if($chay2)
+{
+echo "<script>alert('SUCCESS')</script>";
+}
+else
+echo "<script>alert ('Fail')</script>";;
+}
+}
+?>
 </body>
 </html>
